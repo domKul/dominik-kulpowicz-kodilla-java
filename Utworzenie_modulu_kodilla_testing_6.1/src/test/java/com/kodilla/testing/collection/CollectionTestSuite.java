@@ -1,7 +1,6 @@
 
-package collection;
+package com.kodilla.testing.collection;
 
-import com.kodilla.testing.collection.OddNumbersExterminator;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -33,9 +32,11 @@ public class CollectionTestSuite {
         //Given
         OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
         List<Integer> numbers = new ArrayList<>();
-        System.out.println("List size: " + numbers.size());
+
         //When
-       oddNumbersExterminator.exterminate(numbers);
+        oddNumbersExterminator.exterminate(numbers);
+        System.out.println("List size: " + numbers.size());
+
         //Then
         Assertions.assertTrue(numbers.isEmpty());
     }
@@ -47,22 +48,16 @@ public class CollectionTestSuite {
     public void testOddNumbersExterminatorNormalList(){
         //Given
         OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
-        List<Integer> numbers = new ArrayList<>();
-        numbers.add(1);
-        numbers.add(3);
-        numbers.add(3);
-        numbers.add(2);
-        numbers.add(2);
-        numbers.add(2);
+
+        List ints = Arrays.asList(1, 22, 27, 4, 5);
+        List<Integer>numbers = new ArrayList<>(ints);
 
         //When
-        oddNumbersExterminator.exterminate(numbers);
+       oddNumbersExterminator.exterminate(numbers);
 
         //Then
-        if (numbers.size()>0){
-            System.out.println("List size: " + numbers);
-
-        }
+        System.out.println("even numbers: " + numbers);
+        Assertions.assertFalse(numbers.isEmpty());
 
 
 
