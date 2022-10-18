@@ -33,6 +33,8 @@ public class CollectionTestSuite {
         OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
         List<Integer> numbers = new ArrayList<>();
 
+
+
         //When
         oddNumbersExterminator.exterminate(numbers);
         System.out.println("List size: " + numbers.size());
@@ -43,21 +45,21 @@ public class CollectionTestSuite {
 
 
     @DisplayName("When creating Object and List with numbers(odd and even) added to List" +
-            "the List should print only even numbesr")
+            "the even numbers should be added to list with only even numbers from numbers list")
     @Test
     public void testOddNumbersExterminatorNormalList(){
         //Given
         OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
-
-        List ints = Arrays.asList(1, 22, 27, 4, 5);
-        List<Integer>numbers = new ArrayList<>(ints);
+        List<Integer> numbers = Arrays.asList(23, 22, 140, 88, 13);
 
         //When
-       oddNumbersExterminator.exterminate(numbers);
+        List<Integer> evenNumbers = new ArrayList<>(oddNumbersExterminator.exterminate(numbers));
+        System.out.println("List numbers: "+ numbers +"\n"+"even numbers from list: " + evenNumbers);
+
+
 
         //Then
-        System.out.println("even numbers: " + numbers);
-        Assertions.assertFalse(numbers.isEmpty());
+        Assertions.assertNotEquals(numbers, evenNumbers);
 
 
 
