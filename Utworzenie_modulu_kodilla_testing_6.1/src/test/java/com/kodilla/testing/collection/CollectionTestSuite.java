@@ -59,7 +59,16 @@ public class CollectionTestSuite {
 
 
         //Then
-        Assertions.assertNotEquals(numbers, evenNumbers);
+        int size = 3;
+        List<Integer>numbersToHave = Arrays.asList(22, 140, 88);
+        Assertions.assertTrue(evenNumbers.size()==size && evenNumbers.equals(numbersToHave));
+        for (int i = 0; i<evenNumbers.size();i++){
+            if (evenNumbers.get(i)%2!=0){
+                int even = evenNumbers.get(i)%2;
+                Assertions.assertTrue(even==0);
+            }
+        }
+        System.out.println("It work");
 
 
 
