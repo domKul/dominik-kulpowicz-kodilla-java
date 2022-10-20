@@ -59,14 +59,13 @@ public class CollectionTestSuite {
 
 
         //Then
-        List<Integer>numbersToHave = Arrays.asList(22, 140, 88);
-        Assertions.assertTrue(evenNumbers.size()==numbersToHave.size() && evenNumbers.equals(numbersToHave));
-        for (int i = 0; i<evenNumbers.size();i++){
-            if (evenNumbers.get(i)%2!=0){
-                int even = evenNumbers.get(i)%2;
-                Assertions.assertTrue(even==0);
-            }
-        }
+        List<Integer>expectedNumbers = Arrays.asList(22, 140, 88);
+        List<Integer>unexpectedNumbers=  Arrays.asList(23, 13);
+        Assertions.assertTrue(evenNumbers.size()==expectedNumbers.size());
+        Assertions.assertTrue(evenNumbers.equals(expectedNumbers));
+        Assertions.assertTrue(!evenNumbers.contains(unexpectedNumbers));
+
+
         System.out.println("It work");
 
 

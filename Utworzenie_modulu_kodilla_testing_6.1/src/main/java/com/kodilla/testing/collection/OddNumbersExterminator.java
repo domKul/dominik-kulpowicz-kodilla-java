@@ -9,9 +9,9 @@ public class OddNumbersExterminator {
         for (int i=0;i<numbers.size();i++){
             if (numbers.get(i)%2==0){
                 evenNumbers.add(numbers.get(i));
-                evenNumbers.add(5);
-                evenNumbers.add(7);
-                evenNumbers.add(10);
+                //evenNumbers.add(5);
+                //evenNumbers.add(7);
+                //evenNumbers.add(10);
 
 
 
