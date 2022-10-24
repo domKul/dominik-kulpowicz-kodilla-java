@@ -67,14 +67,16 @@ public class ShapeCollectorTestSuite {
         //Given
         ShapeCollector shapeCollector = new ShapeCollector();
         Circle circle = new Circle("Circle");
+        Triangle triangle = new Triangle("Triangle");
         shapeCollector.addFigure(circle);
+        shapeCollector.addFigure(triangle);
 
         //When
-        shapeCollector.getFigure(0);
+        String result= String.valueOf(shapeCollector.getFigure(0));
 
         //Then
-        Assertions.assertTrue(shapeCollector.figuresCollection.size()>0);
-        Assertions.assertEquals(1, shapeCollector.getFigure(1));
+        Assertions.assertEquals(2, shapeCollector.figuresCollection.size());
+        Assertions.assertEquals("Circle", result);
 
     }
     @Test
@@ -83,17 +85,16 @@ public class ShapeCollectorTestSuite {
         ShapeCollector shapeCollector = new ShapeCollector();
         Circle circle = new Circle("Circle");
         Triangle triangle = new Triangle("Triangle");
-        Square square = new Square("Square");
 
         //When
         shapeCollector.addFigure(circle);
         shapeCollector.addFigure(triangle);
-        shapeCollector.showFigures();
+        String result =shapeCollector.showFigures();
 
         //Then
         String expectedResult = "[Circle, Triangle]";
         Assertions.assertEquals(2,shapeCollector.figuresCollection.size());
-        Assertions.assertEquals(expectedResult, shapeCollector.showFigures());
+        Assertions.assertEquals(expectedResult, result);
 
 
     }
