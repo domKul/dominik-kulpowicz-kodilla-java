@@ -5,14 +5,9 @@ import java.util.*;
 
 public class ShapeCollector{
     List<Shape> figuresCollection = new ArrayList<>();
-   // Circle circle = new Circle("Circle");
-   // Square square = new Square("Square");
-    //Triangle triangle = new Triangle("Triangle");
-
 
     public void addFigure(Shape shape){
         figuresCollection.add(shape);
-
     }
     public void removeFigure(Shape shape){
         figuresCollection.remove(shape);
@@ -25,13 +20,11 @@ public class ShapeCollector{
         return n;
     }
 
-    public void showFigures() {
-
+    public String showFigures() {
+        return Arrays.toString(figuresCollection.toArray());
     }
 
-
-
-    }
+}
 
 
 

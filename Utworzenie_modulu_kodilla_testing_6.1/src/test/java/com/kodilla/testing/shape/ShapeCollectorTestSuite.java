@@ -82,14 +82,19 @@ public class ShapeCollectorTestSuite {
         //Given
         ShapeCollector shapeCollector = new ShapeCollector();
         Circle circle = new Circle("Circle");
+        Triangle triangle = new Triangle("Triangle");
+        Square square = new Square("Square");
 
         //When
         shapeCollector.addFigure(circle);
+        shapeCollector.addFigure(triangle);
         shapeCollector.showFigures();
-        String expected = "Circle";
 
         //Then
-        Assertions.assertEquals(1, shapeCollector.getFigure(1));
+        String expectedResult = "[Circle, Triangle]";
+        Assertions.assertEquals(2,shapeCollector.figuresCollection.size());
+        Assertions.assertEquals(expectedResult, shapeCollector.showFigures());
+
 
     }
 

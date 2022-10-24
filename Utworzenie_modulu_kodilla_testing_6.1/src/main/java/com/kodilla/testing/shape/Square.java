@@ -5,10 +5,8 @@ public class Square implements Shape {
     public Square(String name) {
         this.name = name;
     }
-
     private String name = "Square";
     private double a = 7;
-
     public String getShapeName() {
         return name;
     }
@@ -17,7 +15,6 @@ public class Square implements Shape {
         double result = a * a;
         return result;
     }
-
     @Override
     public String toString() {
         return name;
