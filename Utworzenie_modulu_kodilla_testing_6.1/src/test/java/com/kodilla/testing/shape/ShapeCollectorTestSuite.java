@@ -2,7 +2,7 @@ package com.kodilla.testing.shape;
 
 import org.junit.jupiter.api.*;
 
-import java.util.ArrayList;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ShapeCollectorTestSuite {
     private static int testCounter = 0;
@@ -37,7 +37,7 @@ public class ShapeCollectorTestSuite {
         shapeCollector.addFigure(square);
 
         //Then
-        Assertions.assertEquals(2, shapeCollector.figuresCollection.size());
+        assertEquals(2, shapeCollector.figuresCollection.size());
         Assertions.assertTrue(shapeCollector.figuresCollection.contains(circle));
         Assertions.assertTrue(shapeCollector.figuresCollection.contains(square));
     }
@@ -56,7 +56,7 @@ public class ShapeCollectorTestSuite {
 
         //Then
         Assertions.assertTrue(shapeCollector.figuresCollection.contains(square));
-        Assertions.assertEquals(1, shapeCollector.figuresCollection.size());
+        assertEquals(1, shapeCollector.figuresCollection.size());
     }
 }
    @Nested
@@ -73,10 +73,12 @@ public class ShapeCollectorTestSuite {
 
         //When
         String result= String.valueOf(shapeCollector.getFigure(0));
+        //Shape result = shapeCollector.getFigure(0);
+        String name = circle.getShapeName();
 
         //Then
-        Assertions.assertEquals(2, shapeCollector.figuresCollection.size());
-        Assertions.assertEquals("Circle", result);
+        assertEquals(2, shapeCollector.figuresCollection.size());
+        assertEquals(circle.getShapeName(), result);
 
     }
     @Test
@@ -93,8 +95,8 @@ public class ShapeCollectorTestSuite {
 
         //Then
         String expectedResult = "[Circle, Triangle]";
-        Assertions.assertEquals(2,shapeCollector.figuresCollection.size());
-        Assertions.assertEquals(expectedResult, result);
+        assertEquals(2,shapeCollector.figuresCollection.size());
+        assertEquals(expectedResult, result);
 
 
     }

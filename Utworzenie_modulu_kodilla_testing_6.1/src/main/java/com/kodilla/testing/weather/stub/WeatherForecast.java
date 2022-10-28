@@ -30,9 +30,9 @@ public class WeatherForecast {
         double median;
         if (listOfValues.size() % 2 == 0)
             median = ((double) listOfValues.get(listOfValues.size() / 2) +
-                    (double) listOfValues.get(listOfValues.size() / 2 - 1))/2;
+                     listOfValues.get(listOfValues.size() / 2 - 1))/2;
         else
-            median = (double) listOfValues.get(listOfValues.size() / 2);
+            median =  listOfValues.get(listOfValues.size() / 2);
 
         return median;
 
