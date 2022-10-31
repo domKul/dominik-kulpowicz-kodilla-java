@@ -55,7 +55,7 @@ public class BookDirectoryTestSuite {
         // Given
         LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
         BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
-        List<Book> resultListOf0Books = new ArrayList<Book>();
+        List<Book> resultListOf0Books = new ArrayList<>();
         List<Book> resultListOf15Books = generateListOfNBooks(15);
         List<Book> resultListOf40Books = generateListOfNBooks(40);
 
@@ -97,27 +97,31 @@ public class BookDirectoryTestSuite {
         //Given
         LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
         BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
-        List<Book>noBooks = new ArrayList<Book>();
+        LibraryUser lUser1= new LibraryUser("firstName1", "lastName", "123456789");
+        LibraryUser lUser2= new LibraryUser("firstName2", "lastName", "123456789");
+        LibraryUser lUser3= new LibraryUser("firstName3", "lastName", "123456789");
+
+
+        List<Book> noBooks = new ArrayList<>(0);
         List<Book>listOf5Books = generateListOfNBooks(5);
         List<Book>listOf1Books = generateListOfNBooks(1);
-        LibraryUser lUser = new LibraryUser("firstName", "lastName", "123456789");
 
-        when(libraryDatabaseMock.listBooksInHandsOf(lUser))
+        when(libraryDatabaseMock.listBooksInHandsOf(lUser1))
                 .thenReturn(noBooks);
-        when(libraryDatabaseMock.listBooksInHandsOf(lUser))
+        when(libraryDatabaseMock.listBooksInHandsOf(lUser2))
                 .thenReturn(listOf5Books);
-        when(libraryDatabaseMock.listBooksInHandsOf(lUser))
+        when(libraryDatabaseMock.listBooksInHandsOf(lUser3))
                 .thenReturn(listOf1Books);
 
         //When
-        List<Book>userBooks1 = bookLibrary.listBooksInHandsOf(lUser);
-       List<Book>userBooks2 = bookLibrary.listBooksInHandsOf(lUser);
-       List<Book>userBooks3 = bookLibrary.listBooksInHandsOf(lUser);
+        List<Book>userBooks1 = bookLibrary.listBooksInHandsOf(lUser1);
+       List<Book>userBooks2 = bookLibrary.listBooksInHandsOf(lUser2);
+       List<Book>userBooks3 = bookLibrary.listBooksInHandsOf(lUser3);
 
         //Then
-        assertEquals(1,userBooks1.size());
+        assertEquals(0,userBooks1.size());
         assertEquals(5,userBooks2.size());
-        assertEquals(0,userBooks3.size());
+        assertEquals(1,userBooks3.size());
     }
 
 
