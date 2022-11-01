@@ -18,7 +18,14 @@ public class StreamMain {
        */
 
         PoemBeautifier poemBeautifier = new PoemBeautifier();
-        poemBeautifier.beautify("tekst");
+        poemBeautifier.beautify("AAA", s -> System.out.println(s + " Test Text " + s));
+        poemBeautifier.beautify("CCC".toLowerCase(), s -> System.out.println(s + " Test Text " + s));
+        poemBeautifier.beautify("@".repeat(3), s -> System.out.println(s + " Test Text " + s));
+        poemBeautifier.beautify("ili".toUpperCase(), s -> System.out.println(s + " Test Text " + s));
+
+
+
+
 
 
 
