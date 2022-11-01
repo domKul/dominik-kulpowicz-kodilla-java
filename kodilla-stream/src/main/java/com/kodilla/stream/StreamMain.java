@@ -16,13 +16,18 @@ public class StreamMain {
         poemDecorator2.decorate("oOoOoO".toLowerCase());
         poemDecorator2.decorate("@".repeat(5));
 
+       */
+
         PoemBeautifier poemBeautifier = new PoemBeautifier();
         poemBeautifier.beautify("AAA", s -> System.out.println(s + " Test Text " + s));
-        poemBeautifier.beautify("CCC".toLowerCase(), s -> System.out.println(s + " Test Text " + s));
-        poemBeautifier.beautify("@".repeat(3), s -> System.out.println(s + " Test Text " + s));
-        poemBeautifier.beautify("ili".toUpperCase(), s -> System.out.println(s + " Test Text " + s));
+        poemBeautifier.beautify("CCC", s -> System.out.println(s.toUpperCase() + " Test Text " + s));
+        poemBeautifier.beautify("@", s -> System.out.println(s.repeat(3) + " Test Text " + s));
+        poemBeautifier.beautify("III", s -> System.out.println(s.toLowerCase() + " Test Text " + s));
 
-       */
+
+
+
+
 
         System.out.println("Using Stream to generate even numbers from 1 to 20");
         NumbersGenerator.generateEven(20);
