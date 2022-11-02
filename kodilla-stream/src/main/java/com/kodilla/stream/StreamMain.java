@@ -1,46 +1,35 @@
 package com.kodilla.stream;
 
-import com.kodilla.stream.beautifier.PoemBeautifier;
-import com.kodilla.stream.beautifier.PoemDecorator;
-import com.kodilla.stream.iterate.NumbersGenerator;
+
+import com.kodilla.stream.forumuser.Forum;
+import com.kodilla.stream.forumuser.ForumUser;
+
+import java.util.Map;
+import java.util.stream.Collectors;
 
 
 public class StreamMain {
     public static void main(String[] args) {
 
-      /*  PoemDecorator poemDecorator1 = a -> System.out.println(a + " Testing Stream "+ a);
-        poemDecorator1.decorate("ABC");
-        poemDecorator1.decorate("!!!");
-        PoemDecorator poemDecorator2 = a -> System.out.println(a + " Testing Stream "+ a);
-        poemDecorator2.decorate("abcdea".toUpperCase());
-        poemDecorator2.decorate("oOoOoO".toLowerCase());
-        poemDecorator2.decorate("@".repeat(5));
 
-       */
+        Forum theForum = new Forum();
+        Map<Integer, ForumUser> usersMap= theForum.getForumUserList().stream()
+                .filter(n -> n.getGender() != 'F')
+                .filter(n -> n.getBirthDate().getYear() <= (2002))
+                .filter(n -> n.getPostsNumber() > 0)
+                .collect(Collectors.toMap(ForumUser::getId, n -> n));
 
-        PoemBeautifier poemBeautifier = new PoemBeautifier();
-        poemBeautifier.beautify("AAA", s -> System.out.println(s + " Test Text " + s));
-        poemBeautifier.beautify("CCC", s -> System.out.println(s.toUpperCase() + " Test Text " + s));
-        poemBeautifier.beautify("@", s -> System.out.println(s.repeat(3) + " Test Text " + s));
-        poemBeautifier.beautify("III", s -> System.out.println(s.toLowerCase() + " Test Text " + s));
-
-
-
-
-
-
-        System.out.println("Using Stream to generate even numbers from 1 to 20");
-        NumbersGenerator.generateEven(20);
-
-
-
-
-
+        usersMap.entrySet().stream()
+                .map(entry->entry.getKey()+ " " + entry.getValue())
+                .forEach(System.out::println);
+        System.out.println(usersMap.size());
 
 
 
 
     }
 
+    }
 
-}
+
+
