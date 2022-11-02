@@ -19,7 +19,6 @@ public final class ForumUser {
         this.postsNumber= postsNumber;
         this.birthDate=birthDate;
 
-
     }
 
     public int getId() {

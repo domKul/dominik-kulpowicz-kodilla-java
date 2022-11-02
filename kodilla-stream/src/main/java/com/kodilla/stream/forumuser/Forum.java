@@ -26,10 +26,9 @@ public  final class Forum {
                 LocalDate.of(1999,6,11)));
         forumUserList.add(new ForumUser(9,"Sebastian",'M',5,
                 LocalDate.of(2003,4,22)));
-
     }
 
     public List<ForumUser> getForumUserList() {
-            return new ArrayList<>(forumUserList);
+        return new ArrayList<>(forumUserList);
     }
 }
