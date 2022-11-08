@@ -2,6 +2,8 @@ package com.kodilla.stream.array;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import java.util.Optional;
 import java.util.OptionalDouble;
 
 public class ArrayOperationsTestSuite implements ArrayOperations{
@@ -13,13 +15,14 @@ public class ArrayOperationsTestSuite implements ArrayOperations{
 
 
         //When
-        OptionalDouble average = (ArrayOperations.getAverage(numbers));
+        OptionalDouble result  = Optional.ofNullable(ArrayOperations.getAverage(numbers)).
+                orElse(ArrayOperations.getAverage(numbers));
 
 
         //Then
         //the average must be 17.7
         OptionalDouble expectedAverage = OptionalDouble.of(17.7);
-       Assertions.assertEquals(expectedAverage,average);
+       Assertions.assertEquals(expectedAverage,result);
 
 
     }
