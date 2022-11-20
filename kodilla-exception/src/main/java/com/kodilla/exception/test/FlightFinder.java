@@ -18,19 +18,16 @@ public class FlightFinder {
         boolean airport1 = flightMap.get(flight.getArrivalAirport());
         boolean airport2 = flightMap.get(flight.getDepartureAirport());
 
-        if (flightMap.equals(flight)){
+        if (!flightMap.keySet().equals(airport1)&&flightMap.keySet().equals(airport2)){
             throw new RouteNotFoundException();
         }
-
         if (airport1 == true && airport2 == true) {
             System.out.println("Fly to: " + flight.getArrivalAirport() + "\n" +
                     "Fly from: " + flight.getDepartureAirport());
             } else {
                System.out.println("You can't fly");
             }
-
-        }
-
+    }
 }
 
 
