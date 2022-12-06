@@ -12,8 +12,8 @@ public class FlightFinder {
         flightMap.put("KRK", true);
         flightMap.put("WRO", false);
         flightMap.put("RZE", false);
-        var airport1 = flightMap.get(flight.getArrivalAirport());
-        var airport2 = flightMap.get(flight.getDepartureAirport());
+        Boolean airport1 = flightMap.get(flight.getArrivalAirport());
+        Boolean airport2 = flightMap.get(flight.getDepartureAirport());
 
 
             if (flightMap.get(flight.getDepartureAirport()) == null||

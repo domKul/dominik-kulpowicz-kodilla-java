@@ -12,7 +12,7 @@ public class MainFlight {
            flightFinder.findFlight(flight1);
         }catch (RouteNotFoundException e){
 
-            System.out.println("Incorrect Airport");
+            System.out.println("Incorrect Airport " +e.getMessage());
         }
     }
 }
