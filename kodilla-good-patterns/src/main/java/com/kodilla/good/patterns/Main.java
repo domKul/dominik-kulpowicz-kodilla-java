@@ -2,13 +2,20 @@ package com.kodilla.good.patterns;
 
 import com.kodilla.good.patterns.challenges.MovieStore;
 
+import java.util.stream.Collectors;
+
 public class Main {
 
     public static void main(String[] args) {
         MovieStore movieStore = new MovieStore();
-        movieStore.getMovies().entrySet().stream()
-                .map(entry-> "!"+ entry.getValue())
-                .forEach(System.out::print);
+        String joining = movieStore.getMovies().entrySet().stream()
+                .flatMap(f -> f.getValue().stream())
+                .collect(Collectors.joining("!"));
+
+
+        System.out.println(joining);
+
+
 
     }
 }
