@@ -1,2 +1,9 @@
-package com.kodilla.good.patterns.challenges;public interface UserInformation {
+package com.kodilla.good.patterns.challenges;
+
+import java.util.List;
+
+public interface UserInformation {
+
+    User getUserInfo();
+
 }
