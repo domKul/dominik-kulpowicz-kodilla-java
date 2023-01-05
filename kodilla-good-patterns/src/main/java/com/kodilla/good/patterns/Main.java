@@ -21,10 +21,11 @@ public class Main {
         SendInformation sendInformation = new SendInfoService();
 
         ProductOrderService productOrderService = new ProductOrderService(userInformation, productInformation, sendInformation);
+       // productOrderService.ProductOrderServiceProcessor();
 
 
-        DataBaseUserInfo dataBaseUserInfo = new DataBaseUserInfo();
-        dataBaseUserInfo.getUserInfo();
+
+
 
 
 

@@ -12,13 +12,17 @@ public class ProductOrderService {
         this.sendInformation = sendInformation;
     }
 
-    public void ProductOrderServiceProcessor(){
+    public void ProductOrderServiceProcessor(final Integer userID, final Integer productsID){
+        User buyingProcess=userInformation.getUserInfo(userID);
+        Products procuctToBuy = productInformation.productName(productsID);
+
+        if (buyingProcess.equals(userID)&&procuctToBuy.equals(productsID)){
+
+        }
 
 
 
     }
-
-
 
 
 }
