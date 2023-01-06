@@ -11,18 +11,18 @@ public class ProductOrderService {
         this.productInformation = productInformation;
         this.sendInformation = sendInformation;
     }
-
     public void ProductOrderServiceProcessor(final Integer userID, final Integer productsID){
-        User buyingProcess=userInformation.getUserInfo(userID);
-        Products procuctToBuy = productInformation.productName(productsID);
-
-        if (buyingProcess.equals(userID)&&procuctToBuy.equals(productsID)){
-
-        }
-
+      User buyer=  userInformation.getUserInfo(userID);
+      Products productsToBuy = productInformation.productName(productsID);
+       if (buyer!=null&&productsToBuy!=null){
+          sendInformation.sendMessage("Purchase information has been sent");
+       }else {
+           sendInformation.sendMessage("Problem with the purchase");
+       }
 
 
     }
+
 
 
 }

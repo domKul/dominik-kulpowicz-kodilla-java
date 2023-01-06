@@ -17,4 +17,9 @@ public class Products {
     public int getProductID() {
         return productID;
     }
+
+    @Override
+    public String toString() {
+        return "productName= " + productName;
+    }
 }

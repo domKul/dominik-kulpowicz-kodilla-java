@@ -21,7 +21,7 @@ public class Main {
         SendInformation sendInformation = new SendInfoService();
 
         ProductOrderService productOrderService = new ProductOrderService(userInformation, productInformation, sendInformation);
-       // productOrderService.ProductOrderServiceProcessor();
+         productOrderService.ProductOrderServiceProcessor(123,3);
 
 
 

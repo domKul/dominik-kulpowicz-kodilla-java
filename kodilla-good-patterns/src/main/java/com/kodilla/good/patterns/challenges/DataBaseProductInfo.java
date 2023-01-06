@@ -15,6 +15,7 @@ public class DataBaseProductInfo implements ProductInformation{
         productsList.put(3, new Products("Szczotka do zebow", 3));
         for (Map.Entry<Integer, Products> entry : productsList.entrySet()) {
             if(entry.getValue().getProductID()==productID){
+                System.out.println(entry.getValue());
                 return entry.getValue();
             }
         }
