@@ -14,7 +14,8 @@ public class ProductOrderService {
     public void ProductOrderServiceProcessor(final Integer userID, final Integer productsID){
       User buyer=  userInformation.getUserInfo(userID);
       Products productsToBuy = productInformation.productName(productsID);
-       if (buyer!=null&&productsToBuy!=null){
+      boolean buyCheck = buyer!=null&&productsToBuy!=null;
+       if (buyCheck){
           sendInformation.sendMessage("Purchase information has been sent");
        }else {
            sendInformation.sendMessage("Problem with the purchase");

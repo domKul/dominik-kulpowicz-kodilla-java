@@ -1,4 +1,4 @@
-package com.kodilla.good.patterns;
+package com.kodilla.good.patterns.challenges;
 
 import com.kodilla.good.patterns.challenges.*;
 
@@ -14,24 +14,12 @@ public class Main {
         System.out.println(joining);
 
        */
-
-
         UserInformation userInformation = new DataBaseUserInfo();
         ProductInformation productInformation = new DataBaseProductInfo();
         SendInformation sendInformation = new SendInfoService();
 
         ProductOrderService productOrderService = new ProductOrderService(userInformation, productInformation, sendInformation);
-         productOrderService.ProductOrderServiceProcessor(123,3);
-
-
-
-
-
-
-
-
-
-
+         productOrderService.ProductOrderServiceProcessor(123,1);
 
 
     }
