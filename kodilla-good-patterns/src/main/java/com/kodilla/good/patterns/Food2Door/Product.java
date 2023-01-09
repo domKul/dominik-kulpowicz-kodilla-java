@@ -10,7 +10,6 @@ public class Product {
         this.price = price;
 
     }
-
     public String getProductName() {
         return productName;
     }
@@ -20,7 +19,7 @@ public class Product {
     }
 
     public String toString(){
-        return "Product: " + productName;
+        return "Product name : " + productName;
     }
 
 

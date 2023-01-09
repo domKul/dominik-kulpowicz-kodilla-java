@@ -6,7 +6,7 @@ import java.util.Map;
 
 public class DataBaseOfUsers implements  UserInformation{
 
-    Map<Integer,User> listOfUsers = new HashMap<>();
+   private Map<Integer,User> listOfUsers = new HashMap<>();
     @Override
     public User userInformation(String usersName, String lastName) {
         listOfUsers.put(1 , new User("Adam", "aaa", LocalDate.of(1999,2,17)));
@@ -15,8 +15,7 @@ public class DataBaseOfUsers implements  UserInformation{
         listOfUsers.put(4 , new User("Marta", "ddd", LocalDate.of(1993,7,23)));
         for (Map.Entry<Integer, User> entry : listOfUsers.entrySet()){
             if (entry.getValue().firstName.equals(usersName)&&entry.getValue().lastName.equals(lastName)){
-                System.out.println(entry.getValue());
-               return entry.getValue();
+              return entry.getValue();
             }
         }
         return null;
