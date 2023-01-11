@@ -8,7 +8,6 @@ public class Supplier {
     public Supplier(String suplierName) {
         this.suplierName = suplierName;
 
-
     }
 
     public String getSuplierName() {
