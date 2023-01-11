@@ -16,8 +16,6 @@ public class ExtraFoodShop implements FoodProducer {
     public Supplier process(String productName, int quantity) {
         return checkingAvailability(productName, quantity);
     }
-
-
 }
 
 

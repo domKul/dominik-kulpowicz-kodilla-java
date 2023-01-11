@@ -18,7 +18,6 @@ public class BaseOfProducts implements ProductsInformations {
 
           }
 
-
     @Override
     public Product porductInfo(String productName) {
         for (Map.Entry<Product,Integer> entry : producentProductList.entrySet()){

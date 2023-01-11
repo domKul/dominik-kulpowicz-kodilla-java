@@ -20,7 +20,7 @@ public class OrderService {
             System.out.println("Order placed");
 
         }else{
-            System.out.println("Problem with order");
+            System.out.println("Problem with order for " + foodProducer.suplierName());
         }
 
             }

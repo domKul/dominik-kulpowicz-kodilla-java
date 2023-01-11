@@ -13,6 +13,8 @@ public class Main {
 
 
         OrderService orderService1 = new OrderService(foodProducer1,productsInformations);
+        orderService1.orderExecution(foodProducer2,"product a", 10);
+        orderService1.orderExecution(foodProducer3,"product a", 19);
         orderService1.orderExecution(foodProducer1,"product a", 109);
 
 

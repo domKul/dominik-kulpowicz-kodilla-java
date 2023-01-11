@@ -4,9 +4,6 @@ import java.util.Map;
 
 public class CheckingProcess {
 
-
-
-
     static Supplier checkingAvailability(String productName, int quantity) {
         Map<Product, Integer> producentProductList = BaseOfProducts.getProducentProductList();
         for (Map.Entry<Product, Integer> entry : producentProductList.entrySet()) {
@@ -16,10 +13,9 @@ public class CheckingProcess {
                 System.out.println(entry.getKey());
                 System.out.println("Amound: " + quantity);
                 System.out.println("Total price: " + totalPrice);
-                return new Supplier("ExtraFoodShop");
+                return new Supplier(productName);
             }
         }
         return null;
     }
-
 }
