@@ -6,4 +6,5 @@ public interface SandStorage {
 
     BigDecimal getSandBeansQuantity();
 
+
 }

@@ -12,21 +12,13 @@ public class OrderService {
         this.productsInformations = productsInformations;
     }
 
-
-
     public void orderExecution( FoodProducer foodProducer, String productName, int quantity){
         if (foodProducer.process(productName,quantity)!=null){
             System.out.println(foodProducer.suplierName());
             System.out.println("Order placed");
-
         }else{
             System.out.println("Problem with order for " + foodProducer.suplierName());
         }
-
             }
-
-
-
-
 
 }

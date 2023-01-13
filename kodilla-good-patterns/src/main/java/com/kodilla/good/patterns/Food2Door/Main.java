@@ -18,16 +18,5 @@ public class Main {
         orderService1.orderExecution(foodProducer1,"product a", 109);
 
 
-
-
-
-
-
-
-
-
-
-
-
     }
 }

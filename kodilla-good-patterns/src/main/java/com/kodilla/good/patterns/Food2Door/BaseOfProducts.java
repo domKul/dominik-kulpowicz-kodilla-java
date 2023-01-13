@@ -15,7 +15,6 @@ public class BaseOfProducts implements ProductsInformations {
          producentProductList.put(new Product("product b", 2.5), 458);
          producentProductList.put(new Product("product c", 31.3), 300);
          producentProductList.put(new Product("product d", 42.1), 95);
-
           }
 
     @Override
