@@ -19,6 +19,7 @@ class KodillaSpringApplicationTests {
 				new AnnotationConfigReactiveWebApplicationContext("com.kodilla.spring");
 		Shape shape = context.getBean(Circle.class);
 
+
 		//When
 		String name = shape.getShapeName();
 
