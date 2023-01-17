@@ -5,6 +5,10 @@ package com.kodilla.spring.calculator;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -28,7 +32,14 @@ public class CalculatorTestSuite {
         assertEquals(0,result2);
         assertEquals(5,result3);
         assertEquals(63.69,result4);
+    }
 
-
+    @Test
+    void testContext(){
+        //Given
+        ApplicationContext context = new AnnotationConfigApplicationContext(Display.class);
+        //When&Then
+        System.out.println("List");
+        Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::println);
     }
 }
