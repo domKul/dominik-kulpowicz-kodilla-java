@@ -3,5 +3,6 @@ include 'Utworzenie_modulu_kodilla_testing_6.1'
 include 'kodilla-stream'
 include 'kodilla-exception'
 include 'kodilla-spring'
+include 'kodilla-springg-web'
 
 
