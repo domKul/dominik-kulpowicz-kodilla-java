@@ -1,6 +1,5 @@
 package com.kodilla.patterns.singleton;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -11,7 +10,7 @@ private static Logger logger ;
 
     @BeforeAll
     public static void loggs(){
-        logger=Logger.LOGINSTANCE;
+        logger=Logger.INSTANCE;
         logger.log("LOGS");
     }
 

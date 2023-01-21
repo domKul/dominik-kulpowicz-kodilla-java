@@ -1,7 +1,7 @@
 package com.kodilla.patterns.singleton;
 
 public enum Logger {
-    LOGINSTANCE;
+    INSTANCE;
     private String lastLog = "";
 
     public void log(String log) {
