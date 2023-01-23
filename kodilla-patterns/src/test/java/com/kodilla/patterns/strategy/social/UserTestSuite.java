@@ -38,7 +38,7 @@ public class UserTestSuite {
         adam.setSocialPublisher(new FacebookPublisher());
        String adamAfterChange= adam.sharePost();
         System.out.println("Snap to " + adamAfterChange);
-
+        //Then
         assertEquals("Facebook",adamAfterChange);
 
     }
