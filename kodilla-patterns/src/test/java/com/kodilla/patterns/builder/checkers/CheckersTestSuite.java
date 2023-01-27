@@ -24,9 +24,9 @@ public class CheckersTestSuite {
         Figure figureThree = checkers.getBoard().getFigure(2, 0);
         Figure figureFour = checkers.getBoard().getFigure(1, 1);
         //Then
-        assertEquals(Figure.WHITE, figureOne.getColor());           // [13]
-        assertEquals(Pawn.class, figureTwo.getClass());             // [14]
-        assertEquals(Queen.class, figureThree.getClass());          // [15]
+        assertEquals(Figure.WHITE, figureOne.getColor());
+        assertEquals(Pawn.class, figureTwo.getClass());
+        assertEquals(Queen.class, figureThree.getClass());
         assertNull(figureFour);
 
     }
