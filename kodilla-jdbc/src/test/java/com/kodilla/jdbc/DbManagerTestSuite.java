@@ -88,7 +88,6 @@ public class DbManagerTestSuite {
             System.out.println(rs.getString("FIRSTNAME")+","+
                     rs.getString("LASTNAME"));
             counter++;
-
         }
         rs.close();
         statement.close();
