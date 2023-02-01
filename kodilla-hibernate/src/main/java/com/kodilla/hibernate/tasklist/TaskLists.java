@@ -4,16 +4,16 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 
 @Entity
-@Table(name="TASKSLIST")
-public class TaskList {
+@Table(name="TASKSLISTS")
+public class TaskLists {
     private int id;
     private String listName;
     private String description;
 
-    public TaskList() {
+    public TaskLists() {
     }
 
-    public TaskList( String listName, String description) {
+    public TaskLists(String listName, String description) {
         this.listName = listName;
         this.description = description;
     }

@@ -1,5 +1,7 @@
 package com.kodilla.patterns.factory;
 
+import java.util.Objects;
+
 public final class Rectangle implements Shape {
 
     private final String name;
@@ -25,5 +27,18 @@ public final class Rectangle implements Shape {
     @Override
     public double getCircumference() {
         return 2 * width + 2 * length;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Rectangle rectangle = (Rectangle) o;
+        return Double.compare(rectangle.width, width) == 0 && Double.compare(rectangle.length, length) == 0 && Objects.equals(name, rectangle.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, width, length);
     }
 }
