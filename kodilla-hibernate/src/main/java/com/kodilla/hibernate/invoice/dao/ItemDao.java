@@ -5,11 +5,10 @@ import jakarta.transaction.Transactional;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Transactional
 @Repository
 public interface ItemDao extends CrudRepository<Item,Integer> {
-    List<Item> findByQuantity(int quantity);
+    List<Item> findByPrice(int price);
 }

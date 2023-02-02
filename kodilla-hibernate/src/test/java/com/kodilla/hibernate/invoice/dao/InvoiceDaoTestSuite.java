@@ -11,6 +11,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.math.BigDecimal;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 @SpringBootTest
 public class InvoiceDaoTestSuite {
 
@@ -40,8 +42,6 @@ public class InvoiceDaoTestSuite {
         productDao.save(product0);
         productDao.save(product1);
 
-
-
         item0.setProduct(product0);
         item1.setProduct(product1);
         item2.setProduct(product2);
@@ -55,16 +55,31 @@ public class InvoiceDaoTestSuite {
         invoice0.getItems().add(item2);
 
         invoiceDao.save(invoice0);
-        List<Invoice> invo = invoiceDao.findByNumber("qwert1");
-
         //Then
-        Assertions.assertEquals(1,invo);
+        List<Invoice> invo = invoiceDao.findByNumber("qwert1");
+        assertEquals(1,invo.size());
 
         //CleanUp
-        int id = invoice0.getId();
-        invoiceDao.deleteById(id);
+        int invoice0Id = invoice0.getId();
+        int item0Id = item0.getId();
+        int item1Id = item1.getId();
+        int item2Id = item2.getId();
+        int prod0Id = product0.getId();
+        int prod1Id = product1.getId();
+        int prod2Id = product2.getId();
+
+        invoiceDao.deleteById(invoice0Id);
+        itemDao.deleteById(item0Id);
+        itemDao.deleteById(item1Id);
+        itemDao.deleteById(item2Id);
+        productDao.deleteById(prod0Id);
+        productDao.deleteById(prod1Id);
+        productDao.deleteById(prod2Id);
+
+
 
 
 
     }
+
 }

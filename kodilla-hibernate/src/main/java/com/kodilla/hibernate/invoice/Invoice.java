@@ -33,12 +33,10 @@ public class Invoice {
     public String getNumber() {
         return number;
     }
-    @OneToMany(
-            targetEntity = Item.class,
-            mappedBy ="invoice",
-            cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY
-    )
+    @OneToMany(targetEntity = Item.class,
+    mappedBy = "invoice",
+    cascade = CascadeType.MERGE,
+    fetch = FetchType.LAZY)
     public List<Item> getItems() {
         return items;
     }

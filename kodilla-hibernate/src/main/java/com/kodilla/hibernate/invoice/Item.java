@@ -46,14 +46,15 @@ public class Item {
         return value;
     }
 
-    @ManyToOne
+    @ManyToOne(targetEntity = Product.class,
+    cascade = CascadeType.MERGE)
     @JoinColumn(name="PRODUCTS_ID")
     public Product getProduct() {
         return product;
     }
 
     @ManyToOne
-    @JoinColumn(name = "INVOICE_ID")
+    @JoinColumn(name="INVOICE_NUMBER")
     public Invoice getInvoice() {
         return invoice;
     }
