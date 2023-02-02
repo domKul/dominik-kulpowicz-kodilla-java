@@ -47,7 +47,7 @@ public class Item {
     }
 
     @ManyToOne(targetEntity = Product.class,
-    cascade = CascadeType.MERGE)
+    cascade = CascadeType.ALL)
     @JoinColumn(name="PRODUCTS_ID")
     public Product getProduct() {
         return product;
