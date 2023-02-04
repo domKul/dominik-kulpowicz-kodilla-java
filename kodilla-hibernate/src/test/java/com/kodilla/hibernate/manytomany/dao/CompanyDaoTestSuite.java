@@ -90,11 +90,8 @@ public class CompanyDaoTestSuite {
         lindaKovalsky.getCompanies().add(greyMatter);
         //When
         companyDao.save(softwareMachine);
-        int softwareMachineId = softwareMachine.getId();
         companyDao.save(dataMaesters);
-        int dataMastersId = dataMaesters.getId();
         companyDao.save(greyMatter);
-        int greyMatterId = greyMatter.getId();
 
         List<Employee>employeesFindLastName=employeeDao.retriveEmplyeeWithLastName("Smith2");
         List<Company>companyFindByletters=companyDao.retriveByLetters("Sof%");
@@ -105,14 +102,10 @@ public class CompanyDaoTestSuite {
 
 
         //CleanUp
-        try{
-            companyDao.deleteById(softwareMachineId);
-            companyDao.deleteById(dataMastersId);
-            companyDao.deleteById(greyMatterId);
-        }catch(Exception e){
-            System.out.println(e);
 
-       }
+            companyDao.delete(softwareMachine);
+            companyDao.delete(dataMaesters);
+            companyDao.delete(greyMatter);
 
 
     }
