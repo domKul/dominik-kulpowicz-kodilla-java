@@ -1,11 +1,12 @@
 package com.kodilla.hibernate.manytomany;
 
-import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
-
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
-@NamedNativeQuery(
+@NamedNativeQuery
+
+        (
         name = "Company.retriveByLetters",
         query =  "SELECT * " +
                 "FROM COMPANIES " +
