@@ -1,7 +1,6 @@
 package com.kodilla.patterns2.facade;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -23,7 +22,6 @@ public class ShopService {
         this.productService = productService;
     }
 
-
     public Long openOrder(Long userId) {
         if (authenticator.isAuthenticated(userId)) {
             Long maxOrder = orders.stream()
@@ -41,7 +39,6 @@ public class ShopService {
                 .filter(o -> o.getOrderId().equals(orderId))
                 .forEach(o -> o.getItems().add(new Item(productId, qty)));
     }
-
     public boolean removeItem(Long orderId, Long productId) {
         Iterator<Order> orderIterator = orders.stream()
                 .filter(o -> o.getOrderId().equals(orderId))
@@ -49,8 +46,8 @@ public class ShopService {
         while (orderIterator.hasNext()) {
             Order theOrder = orderIterator.next();
             int orderSize = theOrder.getItems().size();
-            for (int n = 0; n < theOrder.getItems().size(); n++) {
-                if (theOrder.getItems().get(n).getProductId.equals(productId)) {
+            for (int n = 0; n < orderSize; n++) {
+                if (theOrder.getItems().get(n).getProductId().equals(productId)) {
                     theOrder.getItems().remove(n);
                     return true;
                 }
@@ -58,14 +55,13 @@ public class ShopService {
         }
         return false;
     }
-
     public BigDecimal calculateValue(Long orderId) {
         Iterator<Order> orderIterator = orders.stream()
                 .filter(o -> o.getOrderId().equals(orderId))
                 .iterator();
         while (orderIterator.hasNext()) {
             Order theOrder = orderIterator.next();
-            return theOrder.caclulateValue();
+            return theOrder.calculateValue();
         }
         return BigDecimal.ZERO;
     }
@@ -118,7 +114,7 @@ public class ShopService {
                 .filter(o -> o.getOrderId().equals(orderId))
                 .iterator();
         while (orderIterator.hasNext()) {
-            Order theOrder = orderIterator.hasNext();
+            boolean theOrder = orderIterator.hasNext();
             orders.remove(theOrder);
         }
     }

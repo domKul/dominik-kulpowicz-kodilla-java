@@ -8,12 +8,15 @@ import java.math.BigDecimal;
 
 @SpringBootTest
 class ShopServiceTestSuite {
-
     @Autowired
-    private ShopService shopService;
+   private ShopService shopService;
+
+
 
     @Test
     void testShopServiceSubmitOrder() {
+
+
         long orderId = shopService.openOrder(1L);
         System.out.println("Registering new order, ID: " + orderId);
         if (orderId > 0) {

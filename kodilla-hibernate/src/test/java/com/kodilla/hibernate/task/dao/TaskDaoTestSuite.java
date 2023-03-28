@@ -72,7 +72,7 @@ public class TaskDaoTestSuite {
         assertNotEquals(0,id);
 
         //CleanUp
-        //taskDao.deleteById(id);
+        taskDao.deleteById(id);
     }
     @Test
     void testTaskListDaoSaveWithTasks() {
@@ -103,10 +103,11 @@ public class TaskDaoTestSuite {
         assertNotEquals(0, id);
 
         //CleanUp
-        //taskListDao.deleteById(id);
+        taskListDao.deleteById(id);
     }
     @Test
     void testNamedQueries(){
+        taskListDao.deleteAll();
         //Given
         Task task1 = new Task("Test: Study Hibernate", 3);
         Task task2 = new Task("Test: Practice Named Queries", 6);
@@ -145,10 +146,10 @@ public class TaskDaoTestSuite {
 
         //Then
         try{
-//            assertEquals(1,longTasks.size());
-//            assertEquals(3,shortTasks.size());
-//            assertEquals(3,enoughTimeTasks.size());
-//            assertEquals(2,durationLongerThenTask.size());
+            assertEquals(1,longTasks.size());
+            assertEquals(3,shortTasks.size());
+            assertEquals(3,enoughTimeTasks.size());
+            assertEquals(2,durationLongerThenTask.size());
         }finally {
             //CleanUp
             taskListDao.deleteById(id);
