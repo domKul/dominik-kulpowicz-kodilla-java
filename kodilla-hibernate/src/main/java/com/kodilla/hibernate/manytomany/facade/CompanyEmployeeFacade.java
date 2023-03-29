@@ -11,16 +11,14 @@ import java.util.List;
 
 @Service
 public class CompanyEmployeeFacade {
+    private final CompanyDao companyDao;
+    private final EmployeeDao employeeDao;
 
     @Autowired
     public CompanyEmployeeFacade(CompanyDao companyDao, EmployeeDao employeeDao) {
         this.companyDao = companyDao;
         this.employeeDao = employeeDao;
     }
-
-    private final CompanyDao companyDao;
-    private final EmployeeDao employeeDao;
-
 
     public List<Employee> findByNameFragment(String nameFragment) {
         return employeeDao.findByNameFragment(nameFragment);
