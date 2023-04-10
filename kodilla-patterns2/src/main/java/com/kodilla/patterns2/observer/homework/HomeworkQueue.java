@@ -5,7 +5,7 @@ import java.util.List;
 
 public class HomeworkQueue implements HomeworkObservable{
 
-    private final List<HonewworkObserver> observers;
+    private final List<HomeworkObserver> observers;
     private final List<String> tasks;
     private final String name;
 
@@ -21,23 +21,23 @@ public class HomeworkQueue implements HomeworkObservable{
     }
 
     @Override
-    public void registerObserver(HonewworkObserver observer) {
+    public void registerObserver(HomeworkObserver observer) {
         observers.add(observer);
     }
 
     @Override
     public void notifyObservers() {
-        for (HonewworkObserver observer : observers){
+        for (HomeworkObserver observer : observers){
             observer.update(this);
         }
     }
 
     @Override
-    public void removeObserver(HonewworkObserver observer) {
+    public void removeObserver(HomeworkObserver observer) {
         observers.remove(observer);
     }
 
-    public List<HonewworkObserver> getObservers() {
+    public List<HomeworkObserver> getObservers() {
         return observers;
     }
 

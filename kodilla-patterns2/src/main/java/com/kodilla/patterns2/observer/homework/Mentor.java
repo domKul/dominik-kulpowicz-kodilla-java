@@ -1,6 +1,6 @@
 package com.kodilla.patterns2.observer.homework;
 
-public class Mentor implements HonewworkObserver{
+public class Mentor implements HomeworkObserver {
 
     private final String name;
     private int updateCount;

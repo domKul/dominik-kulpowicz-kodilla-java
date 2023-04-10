@@ -1,6 +1,6 @@
 package com.kodilla.patterns2.observer.homework;
 
-public interface HonewworkObserver {
+public interface HomeworkObserver {
 
     void update (HomeworkQueue homeworkQueue);
 }
