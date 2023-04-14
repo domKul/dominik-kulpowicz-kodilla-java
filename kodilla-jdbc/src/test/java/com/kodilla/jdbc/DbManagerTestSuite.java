@@ -14,7 +14,7 @@ public class DbManagerTestSuite {
         //When
         DbManager dbManager = DbManager.getInstance();
         //Then
-       // assertNotNull(dbManager.getConnection());
+          // assertNotNull(dbManager.getConnection());
     }
 
     @Test
@@ -74,8 +74,7 @@ public class DbManagerTestSuite {
         String sqlQuary ="SELECT U.FIRSTNAME, U.LASTNAME\n"+
                 "FROM USERS U\n"+
                 "JOIN POSTS P ON U.ID = P.USER_ID\n"+
-                "GROUP BY USER_ID\n"+
-                "HAVING COUNT(P.BODY)>1";
+                "GROUP BY USER_ID\n";
         Statement statement = dbManager.getConnection().createStatement();
         ResultSet rs = statement.executeQuery(sqlQuary);
         //Then
@@ -88,9 +87,6 @@ public class DbManagerTestSuite {
         rs.close();
         statement.close();
         //assertEquals(1,counter);
-
-
-
 
     }
 
