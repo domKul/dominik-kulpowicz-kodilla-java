@@ -15,7 +15,7 @@ public class GoogleTestingApp {
         driver.findElement(By.xpath("//*[@id=\"L2AGLb\"]/div")).click();
 
         WebElement searchField = driver.findElement(By.name(SEARCHFIELD));
-        searchField.sendKeys("Kodilla");
+        searchField.sendKeys("Dominik Kulpowicz");
         searchField.submit();
     }
 }
